@@ -1,6 +1,6 @@
 [versions]
-agp = "8.3.0-alpha12"
-kotlin = "1.9.10"
+agp = "8.3.0-alpha13"
+kotlin = "1.9.20"
 preference-ktx = "1.2.1"
 review-ktx = "2.0.1"
 
