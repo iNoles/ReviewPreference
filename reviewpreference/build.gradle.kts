@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.kotlinAndroid)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -26,6 +26,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.review.ktx)
-    implementation(libs.androidx.preference.ktx)
+    api("com.google.android.play:review-ktx:2.0.1")
+    api("androidx.preference:preference-ktx:1.2.1")
 }
