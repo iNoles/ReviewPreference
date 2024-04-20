@@ -4,7 +4,7 @@
 
 ## Overview
 
-In Android apps, it's often useful to prompt users to leave a review after they've used the app for a certain number of times. The `ReviewPreference` class simplifies this process by encapsulating the logic for tracking app openings and displaying the review prompt when appropriate.
+In Android apps, it's often useful to prompt users to leave a review after they've used the app a certain number of times. The `ReviewPreference` class simplifies this process by encapsulating the logic for tracking app openings and displaying the review prompt when appropriate.
 
 ## Features
 
