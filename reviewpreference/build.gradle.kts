@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    `maven-publish`
 }
 
 android {
@@ -24,6 +25,21 @@ android {
         jvmTarget = "1.8"
     }
 }
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.jonathansteele.reviewpreference"
+            artifactId = "reviewpreference"
+            version = "1.0"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
+
 
 dependencies {
     api("com.google.android.play:review-ktx:2.0.1")
