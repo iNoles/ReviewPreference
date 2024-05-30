@@ -39,6 +39,10 @@ publishing {
     }
     publications {
         register<MavenPublication>("gpr") {
+            groupId = "com.jonathansteele.reviewpreference"
+            artifactId = "reviewpreference"
+            version = "1.0"
+
             from(components["java"])
         }
     }
