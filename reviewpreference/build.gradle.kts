@@ -43,7 +43,9 @@ publishing {
             artifactId = "reviewpreference"
             version = "1.0"
 
-            from(components["java"])
+            afterEvaluate {
+               from(components["java"])
+            }
         }
     }
 }
