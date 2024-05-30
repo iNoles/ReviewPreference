@@ -40,7 +40,6 @@ publishing {
     }
 }
 
-
 dependencies {
     api("com.google.android.play:review-ktx:2.0.1")
     api("androidx.preference:preference-ktx:1.2.1")
