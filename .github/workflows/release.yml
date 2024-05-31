@@ -20,4 +20,4 @@ jobs:
       - name: Publish artifact
         run: |
           ./gradlew build
-          ./gradlew -Pgpr.user=inoles -Pgpr.key=${{ secrets.GITHUB_TOKEN }} publish
+          ./gradlew --info --stacktrace -Pgpr.user=inoles -Pgpr.key=${{ secrets.GITHUB_TOKEN }} publish
