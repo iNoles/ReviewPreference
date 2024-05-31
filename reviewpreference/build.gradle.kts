@@ -27,22 +27,15 @@ android {
 }
 
 publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/inoles/reviewpreference")
-            credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
     publications {
-        register<MavenPublication>("gpr") {
+        register<MavenPublication>("release") {
             groupId = "com.jonathansteele.reviewpreference"
             artifactId = "reviewpreference"
             version = "1.0"
-            from(components["java"])
+
+            afterEvaluate {
+                from(components["release"])
+            }
         }
     }
 }
