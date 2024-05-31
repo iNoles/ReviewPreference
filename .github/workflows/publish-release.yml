@@ -18,6 +18,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Publish artifact
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
         run: |
           ./gradlew publish
 
