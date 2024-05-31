@@ -42,7 +42,7 @@ publishing {
             groupId = "com.jonathansteele.reviewpreference"
             artifactId = "reviewpreference"
             version = "1.0"
-            from(components["release"])
+            from(components["java"])
         }
     }
 }
