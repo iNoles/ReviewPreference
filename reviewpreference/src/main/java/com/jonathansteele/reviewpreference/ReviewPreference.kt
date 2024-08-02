@@ -4,7 +4,9 @@ import android.app.Activity
 import androidx.preference.PreferenceManager
 import com.google.android.play.core.review.ReviewManagerFactory
 
-class ReviewPreference(private val activity: Activity) {
+class ReviewPreference(
+    private val activity: Activity,
+) {
     private val preferences = PreferenceManager.getDefaultSharedPreferences(activity)
 
     fun openTimes(times: Int = 5) {
