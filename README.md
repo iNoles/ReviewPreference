@@ -26,6 +26,7 @@ reviewPreference.openTimes(times = 5)
 ```
 
 ## Dependencies
+
 - AndroidX Preference Library
 - Play Core Library
 
