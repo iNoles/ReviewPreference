@@ -1,8 +1,13 @@
+import java.util.Properties
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     `maven-publish`
 }
+
+val githubProperties = Properties()
+File(rootDir, "github.properties").takeIf { it.exists() }?.inputStream()?.use(githubProperties::load)
 
 android {
     namespace = "com.jonathansteele.reviewpreference"
@@ -32,8 +37,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/inoles/reviewpreference")
             credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("PASSWORD")
+                username = githubProperties["gpr.user"] as String? ?: System.getenv("USERNAME")
+                password = githubProperties["gpr.key"] as String? ?: System.getenv("PASSWORD")
             }
         }
     }
