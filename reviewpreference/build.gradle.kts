@@ -42,7 +42,7 @@ publishing {
             groupId = "com.jonathansteele.reviewpreference"
             artifactId = "reviewpreference"
             version = "1.0"
-            artifact("$buildDir/outputs/aar/reviewpreference-release.aar")
+            artifact("${layout.buildDirectory.get()}/outputs/aar/reviewpreference-release.aar")
         }
     }
 }
