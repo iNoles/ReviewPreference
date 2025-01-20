@@ -1,8 +1,8 @@
 import java.util.Properties
 
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
     `maven-publish`
 }
 
@@ -10,8 +10,8 @@ val githubProperties = Properties()
 File(rootDir, "github.properties").takeIf { it.exists() }?.inputStream()?.use(githubProperties::load)
 
 android {
-    namespace = "com.jonathansteele.reviewpreference"
-    compileSdk = 34
+    namespace = "com.github.inoles.reviewpreference"
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -44,15 +44,15 @@ publishing {
     }
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.jonathansteele.reviewpreference"
+            groupId = "com.github.inoles.reviewpreference"
             artifactId = "reviewpreference"
-            version = "1.0.1"
+            version = "1.0.0"
             artifact("${layout.buildDirectory.get()}/outputs/aar/reviewpreference-release.aar")
         }
     }
 }
 
 dependencies {
-    api("com.google.android.play:review-ktx:2.0.2")
-    api("androidx.preference:preference-ktx:1.2.1")
+    api(libs.review.ktx)
+    api(libs.preference.ktx)
 }

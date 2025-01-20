@@ -17,12 +17,12 @@ In Android apps, it's often useful to prompt users to leave a review after they'
 
 1. Add the `ReviewPreference` class to your Android project.
 2. Initialize `ReviewPreference` with an instance of your `Activity`.
-3. Call the `openTimes` method to track app openings and display the review prompt when necessary.
+3. Call the `trackAppOpens` method to track app openings and display the review prompt when necessary.
 
 ```kotlin
 // Example usage:
 val reviewPreference = ReviewPreference(this)
-reviewPreference.openTimes(times = 5)
+reviewPreference.trackAppOpens(times = 5)
 ```
 
 ## Dependencies
