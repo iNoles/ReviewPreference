@@ -1,17 +1,18 @@
 package com.github.inoles.reviewpreference
 
 import android.app.Activity
+import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 import com.google.android.play.core.review.ReviewManagerFactory
-import androidx.core.content.edit
 
 /**
  * A helper class to manage in-app review prompts using Google Play Core Library.
  *
  * @param activity The activity used to show the review flow and manage preferences.
  */
-class ReviewPreference(private val activity: Activity) {
-
+class ReviewPreference(
+    private val activity: Activity,
+) {
     // Shared preferences instance
     private val preferences = PreferenceManager.getDefaultSharedPreferences(activity)
 
@@ -26,7 +27,10 @@ class ReviewPreference(private val activity: Activity) {
      *
      * @param threshold The number of app opens required to show the review prompt.
      */
-    fun trackAppOpens(threshold: Int = 5, resetAfterPrompt: Boolean = true) {
+    fun trackAppOpens(
+        threshold: Int = 5,
+        resetAfterPrompt: Boolean = true,
+    ) {
         // Validate the threshold to avoid invalid configurations
         if (threshold <= 0) {
             throw IllegalArgumentException("Threshold must be greater than 0.")
