@@ -17,6 +17,10 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "17"
+
+      - name: Build AAR
+        run: ./gradlew assembleRelease
+         
       - name: Publish artifact
         run: ./gradlew --stacktrace publish
         env:
