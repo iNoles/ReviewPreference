@@ -18,6 +18,7 @@ jobs:
           distribution: "temurin"
           java-version: "17"
       - name: Publish artifact
-        run: |
-          ./gradlew build
-          ./gradlew --info --stacktrace -Pgpr.user=inoles -Pgpr.key=${{ secrets.GITHUB_TOKEN }} publish
+        run: ./gradlew --stacktrace publish
+        env:
+         GITHUB_USER: inoles
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
