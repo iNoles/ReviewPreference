@@ -20,5 +20,5 @@ jobs:
       - name: Publish artifact
         run: ./gradlew --stacktrace publish
         env:
-         GITHUB_USER: inoles
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: inoles
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
