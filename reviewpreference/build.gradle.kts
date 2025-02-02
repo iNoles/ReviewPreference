@@ -37,8 +37,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/inoles/reviewpreference")
             credentials {
-                username = githubProperties["gpr.user"] as String? ?: System.getenv("USERNAME")
-                password = githubProperties["gpr.key"] as String? ?: System.getenv("PASSWORD")
+                username = githubProperties["gpr.user"] as String? ?: System.getenv("GITHUB_USER")
+                password = githubProperties["gpr.key"] as String? ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
