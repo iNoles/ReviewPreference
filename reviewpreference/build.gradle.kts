@@ -15,6 +15,8 @@ android {
 
     defaultConfig {
         minSdk = 24
+
+        consumerProguardFiles("consumer-proguard-rules.pro")
     }
 
     buildTypes {
@@ -46,7 +48,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.inoles.reviewpreference"
             artifactId = "reviewpreference"
-            version = "1.0.0"
+            version = "1.0.1"
             artifact("${layout.buildDirectory.get()}/outputs/aar/reviewpreference-release.aar")
         }
     }
