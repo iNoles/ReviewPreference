@@ -1,9 +1,11 @@
-name: Publish release
-
 on:
   release:
     types: [published]
-permissions: read-all
+
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   publish-release:
     runs-on: ubuntu-latest
