@@ -1,0 +1,2 @@
+-keep class androidx.preference.** { *; }
+-keep interface androidx.preference.** { *; }
