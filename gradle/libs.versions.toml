@@ -1,6 +1,6 @@
 [versions]
 agp = "9.0.0"
-kotlin= "2.3.0"
+kotlin= "2.3.10"
 preferenceKtx = "1.2.1"
 reviewKtx = "2.0.2"
 
